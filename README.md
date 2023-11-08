@@ -1,2 +1,2 @@
-# hello_world
-bla bla
+# Test Projects
+project with test exercises
