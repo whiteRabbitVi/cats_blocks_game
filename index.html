@@ -28,7 +28,7 @@
     }
     // TODO: создайте компонент карточки
     function Card({img, text, isVisible, isFinished}) {
-      const className = `card ${isVisible ? card-show : ''} ${isFinished ? card-finished : ''}`
+      const className = `card ${isVisible ? 'card-show' : ''} ${isFinished ? 'card-finished' : ''}`
 
       return (
         <li className={className}>
