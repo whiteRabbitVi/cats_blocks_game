@@ -1,13 +1,15 @@
+// Получаем контейнер для рендеринга приложения
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 root.render(
   <App images={images} visibleItems={visibleItems} finishedItems={finishedItems} />
 );
 
-// Корневой компонент приложения
+// Компонент приложения
 function App({ images = [], visibleItems = [], finishedItems = [] }) {
   return (
     <section className="game container">
+      <h1>Игра Мемори</h1>
       <Grid images={images} visibleItems={visibleItems} finishedItems={finishedItems} />
     </section>
   );
