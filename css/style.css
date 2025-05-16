@@ -137,3 +137,8 @@ body {
   transition-duration: var(--animation-duration);
   transition-timing-function: ease-in-out;
 }
+
+.d1 {
+  color: #F16246;
+  text-align: center;
+}
