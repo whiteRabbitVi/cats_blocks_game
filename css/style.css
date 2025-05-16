@@ -152,6 +152,10 @@ h1 {
   margin-bottom: 40px;
 }
 
+.counter-border {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
 .custom-button {
   background-color: #EA4C89;
   border: none;
