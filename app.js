@@ -48,10 +48,11 @@ function Grid({ images, visibleItems, finishedItems }) {
 function Counter() {
   const [count, setState] = React.useState(0);
   
-  return
+  return (
     <div>
       <h1>{count}</h1>
       <button onClick={() => {setState(count + 1)}} className="custom-button">+</button>
       <button onClick={() => {setState(count - 1)}} className="custom-button">-</button>
     </div>
+  )
 }
