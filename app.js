@@ -37,5 +37,5 @@ function Grid({ images, visibleItems, finishedItems }) {
       isFinished={finishedItems.includes(image.id)}
     />
   ));
-  return <ul className="cards cards-theme-cars">{cards}</ul>;
+  return <ul className="cards">{cards}</ul>;
 }
