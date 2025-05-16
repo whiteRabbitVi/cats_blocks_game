@@ -1,4 +1,4 @@
-const images = [{
+export const images = [{
   'id': 'YdAqiUkUoWA',
   'url': 'img/cats-1.jpg',
   'description': 'pink petaled flower',
@@ -49,5 +49,5 @@ const images = [{
 }];
 
 // списки выделенных и отгаданных карточек для отладки
-const visibleItems = ['hX_hf2lPpUU', '3tYZjGSBwbk'];
-const finishedItems = ['YdAqiUkUoWA', 'YdAqiUkUoWA1', 'w1JE5duY62M', 'w1JE5duY62M1'];
+export const visibleItems = ['hX_hf2lPpUU', '3tYZjGSBwbk'];
+export const finishedItems = ['YdAqiUkUoWA', 'YdAqiUkUoWA1', 'w1JE5duY62M', 'w1JE5duY62M1'];
