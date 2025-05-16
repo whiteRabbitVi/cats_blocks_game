@@ -1,7 +1,8 @@
 // Получаем контейнер для рендеринга приложения
-ReactDOM.render(
-  <App images={images} visibleItems={visibleItems} finishedItems={finishedItems} />,
-  document.getElementById('root')
+const container = document.getElementById('root');
+const root = ReactDOM.createRoot(container);
+root.render(
+  <App images={images} visibleItems={visibleItems} finishedItems={finishedItems} />
 );
 
 // Компонент приложения
