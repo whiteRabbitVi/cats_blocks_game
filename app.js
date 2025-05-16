@@ -11,6 +11,9 @@ function App({ images = [], visibleItems = [], finishedItems = [] }) {
     <section className="container game">
       <Grid images={images} visibleItems={visibleItems} finishedItems={finishedItems} />
     </section>
+    <section className="container game">
+      <Counter />
+    </section>
   );
 }
 
@@ -44,10 +47,8 @@ function Counter() {
   const [count, setState] = React.useState(0);
   
   return (
-    <section className="container game">
-      <h1>{count}</h1>
-      <button onClick={() => {setState(count + 1)}} className="custom-button">+</button>
-      <button onClick={() => {setState(count - 1)}} className="custom-button">-</button>
-    </section>
+    <h1>{count}</h1>
+    <button onClick={() => {setState(count + 1)}} className="custom-button">+</button>
+    <button onClick={() => {setState(count - 1)}} className="custom-button">-</button>
   )
 }
