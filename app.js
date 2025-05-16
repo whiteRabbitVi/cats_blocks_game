@@ -8,7 +8,7 @@ root.render(
 // Компонент приложения
 function App({ images = [], visibleItems = [], finishedItems = [] }) {
   return (
-    <section className="game container">
+    <section className="game">
       <h1>Игра Мемори</h1>
       <Grid images={images} visibleItems={visibleItems} finishedItems={finishedItems} />
     </section>
