@@ -144,21 +144,21 @@ body {
 }
 
 h1 {
-	font-family: "Nunito";
-	color:#000000;
-	line-height: 1.2;
-	font-weight: 500;
-	font-size: 64px;
-	margin-bottom: 40px;
+  font-family: "Nunito";
+  color:#000000;
+  line-height: 1.2;
+  font-weight: 500;
+  font-size: 64px;
+  margin-bottom: 40px;
 }
 
 .custom-button {
-	background-color: #EA4C89;
-	border: none;
-	border-radius: 5px;
-	color: white;
-	padding: 10px 20px;
-	text-align: center;
-	display: inline-block;
-	margin-right: 5px;
+  background-color: #EA4C89;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  padding: 10px 20px;
+  text-align: center;
+  display: inline-block;
+  margin-right: 5px;
 }
