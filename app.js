@@ -1,3 +1,5 @@
+import { images, visibleItems, finishedItems } from './data.js';
+
 // Получаем контейнер для рендеринга приложения
 ReactDOM.render(
   <App images={images} visibleItems={visibleItems} finishedItems={finishedItems} />,
