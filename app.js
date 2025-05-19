@@ -55,7 +55,7 @@ function Counter() {
           onClick={() => {
           setState(count + 1) 
           setIncCount(incCount + 1)
-        }} className="custom-button">+ ({incCount})</button>
+        }} className="custom-button">+ (click on plus {incCount} times)</button>
     
         <button onClick={() => {setState(count - 1)}} className="custom-button">-</button>
       </div>
