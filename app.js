@@ -12,9 +12,7 @@ function App({ images = [], visibleItems = [], finishedItems = [] }) {
       <section className="container game">
         <Grid images={images} visibleItems={visibleItems} finishedItems={finishedItems} />
       </section>
-      <section className="container game">
         <Counter />
-      </section>
     </div>
   );
 }
