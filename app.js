@@ -6,7 +6,7 @@ root.render(
 );
 
 // Компонент приложения
-function App({ images = []) {
+function App({ images = [] }) {
   const finishedItems = [];
   const [stepCount, setStepCount] = React.useState(0)
   const checkItems = () => {
