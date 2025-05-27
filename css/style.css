@@ -162,7 +162,7 @@ h1 {
     box-sizing: border-box;
     /* text-align: center; */
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    margin: auto auto 60px auto;
+    margin: auto auto 30px auto;
 }
 
 .button-row {
