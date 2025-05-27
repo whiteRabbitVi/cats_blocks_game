@@ -47,7 +47,7 @@ function App({ images = [] }) {
                       onCardClick={handleCardClick}
               />
       ))};
-      </ul>;
+      </ul>
   }
 
 // Компонент карточки
