@@ -181,3 +181,14 @@ h1 {
   display: inline-block;
   margin-right: 5px;
 }
+
+.steps {
+  justify-self: end;
+  padding: 8px 20px;
+  font-weight: 900;
+  font-size: 20px;
+  line-height: 28px;
+  color: #ffffff;
+  background-color: #00ca51;
+  border-radius: 22px;
+}
