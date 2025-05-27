@@ -8,7 +8,7 @@ root.render(
 // Компонент приложения
 function App({ images = [] }) {
   const finishedItems = [];
-  const [stepCount, setStepCount] = React.useState(0)
+  const [stepsCount, setStepCount] = React.useState(0)
   const checkItems = () => {
     setStepCount((i) => i + 1);
   }
