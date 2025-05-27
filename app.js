@@ -35,7 +35,7 @@ function App({ images = [] }) {
       setSelectedItems((items) => [...items, id]);
     });
 
-    return <ul className="cards">{cards}
+    return <ul className="cards">
       {images.map((item) => (
               <Card
                       key={item.id}
