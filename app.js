@@ -51,7 +51,7 @@ function App({ images = [] }) {
   }
 
 // Компонент карточки
-function Card({ img, text, checkItems, isSelected, isFinished }) {
+function Card({ url, description, isSelected, isFinished, onCardClick, id }) {
   const className = `card ${isSelected ? 'card-show' : ''} ${isFinished ? 'card-finished' : ''}`;
   const handleClick = () => {
         if (isFinished) {
@@ -67,7 +67,7 @@ function Card({ img, text, checkItems, isSelected, isFinished }) {
             src={url}
             alt={description}
           />
-        </li>
+    </li>
   );
 }
 
