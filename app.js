@@ -21,7 +21,7 @@ function App({ images = [] }) {
       </section>
         <Counter />
     </div>
-  );
+  )
 }
 
 // Компонент сетки карточек
@@ -68,7 +68,7 @@ function Card({ url, description, isSelected, isFinished, onCardClick, id }) {
             alt={description}
           />
     </li>
-  );
+  )
 }
 
 // Компонент каунтер
