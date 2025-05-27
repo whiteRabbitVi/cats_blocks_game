@@ -25,31 +25,30 @@ function App({ images = [] }) {
 }
 
 // Компонент сетки карточек
-function Grid({ images, visibleItems, finishedItems }) {
-  const [selectedItems, setSelectedItems] = React.useState([])
-  const handleCardClick = ((id) => {
-    if (selectedItems.includes(id)) {
-      return;
-    }
-    checkItems();
-    setSelectedItems((items) => [...items, id]);
+  function Grid({images = [], finishedItems = [], checkItems}) {
+    const [selectedItems, setSelectedItems] = React.useState([]);
+    const handleCardClick = ((id) => {
+      if (setSelectedItems.includes(id)) {
+        return;
+      }
+      checkItems();
+      setSelectedItems((items) => [...items, id]);
+    });
+
+    return <ul className="cards">{cards}
+      {images.map((item) => (
+              <Card
+                      key={item.id}
+                      id={item.id}
+                      url={item.url}
+                      description={item.description}
+                      isFinished={finishedItems.includes(item.id)}
+                      isSelected={selectedItems.includes(item.id)}
+                      onCardClick={handleCardClick}
+              />
+      ))};
+      </ul>;
   }
-  ));
-  
-  return <ul className="cards">{cards}
-    {images.map((item) => (
-      <Card 
-        key={item.id}
-        id={item.id}
-        url={item.url}
-        description={item.description}
-        isFinished={finishedItems.includes(item.id)}
-        isSelected={selectedItems.includes(item.id)}
-        onCardClick={handleCardClick}
-      />
-    ))} 
-    </ul>;
-}
 
 // Компонент карточки
 function Card({ img, text, checkItems, isSelected, isFinished }) {
