@@ -3,7 +3,7 @@ const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
 root.render(
   <App images={images} />
-);
+)
 
 // Компонент приложения
 function App({ images = [] }) {
@@ -28,7 +28,7 @@ function App({ images = [] }) {
   function Grid({images = [], finishedItems = [], checkItems}) {
     const [selectedItems, setSelectedItems] = React.useState([]);
     const handleCardClick = ((id) => {
-      if (setSelectedItems.includes(id)) {
+      if (selectedItems.includes(id)) {
         return;
       }
       checkItems();
@@ -70,7 +70,6 @@ function Card({ url, description, isSelected, isFinished, onCardClick, id }) {
     </li>
   );
 }
-
 
 // Компонент каунтер
 function Counter() {
