@@ -46,7 +46,7 @@ function App({ images = [] }) {
                       isSelected={selectedItems.includes(item.id)}
                       onCardClick={handleCardClick}
               />
-      ))};
+      ))}
       </ul>
   }
 
