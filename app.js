@@ -7,7 +7,7 @@ root.render(
 
 // Компонент приложения
 function App({ images = [] }) {
-  const finishedItems = [];
+  const finishedItems = React.useState(['1', '2']);
   const [stepsCount, setStepCount] = React.useState(0)
   const checkItems = () => {
     setStepCount((i) => i + 1);
@@ -27,24 +27,32 @@ function App({ images = [] }) {
 // Компонент сетки карточек
   function Grid({images = [], finishedItems = [], checkItems}) {
     const [selectedItems, setSelectedItems] = React.useState([]);
+    
     const handleCardClick = ((id) => {
       if (selectedItems.includes(id)) {
         return;
       }
       checkItems();
-      setSelectedItems((items) => [...items, id]);
+
+      switch (selectedItems.length) {
+        case 0: 
+          setSelectedItems([id]);
+          break;
+        case default:
+          setSelectedItems([]);
+      }
     });
 
     return <ul className="cards">
       {images.map((item) => (
               <Card
-                      key={item.id}
-                      id={item.id}
-                      url={item.url}
-                      description={item.description}
-                      isFinished={finishedItems.includes(item.id)}
-                      isSelected={selectedItems.includes(item.id)}
-                      onCardClick={handleCardClick}
+                  key={item.id}
+                  id={item.id}
+                  url={item.url}
+                  description={item.description}
+                  isFinished={finishedItems.includes(item.id)}
+                  isSelected={selectedItems.includes(item.id)}
+                  onCardClick={handleCardClick}
               />
       ))}
       </ul>
