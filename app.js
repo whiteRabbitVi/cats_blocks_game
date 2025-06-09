@@ -32,11 +32,16 @@ function App({ images = [] }) {
       if (selectedItems.includes(id)) {
         return;
       }
-      checkItems();
-
       switch (selectedItems.length) {
         case 0: 
           setSelectedItems([id]);
+          break;
+        case 2:
+          setSelectedItems([id]);
+          break;
+        case 1:
+          setSelectedItems((items) => [...items, id]);
+          checkItems(selectedItems[0], id);
           break;
         case default:
           setSelectedItems([]);
