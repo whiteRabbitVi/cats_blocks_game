@@ -1,17 +1,21 @@
 // Получаем контейнер для рендеринга приложения
 const container = document.getElementById('root');
 const root = ReactDOM.createRoot(container);
-root.render(
-  <App images={images} />
-)
+root.render(<App images={images} />)
 
 // Компонент приложения
 function App({ images = [] }) {
-  const finishedItems = React.useState(['1', '2']);
+  const finishedItems = React.useState([]);
   const [stepsCount, setStepCount] = React.useState(0)
-  const checkItems = () => {
-    setStepCount((i) => i + 1);
-  }
+  
+  const checkItems = (firstItem, secondItem) => {
+      firstItem = images.find(({id}) => id === firstItem);
+      secondItem = images.find(({id}) => id === secondItem);
+      if (firstItem.url === secondItem.url) {
+        finishedItems((items) => [...items, firstItem, secondItem])
+      }
+      setStepsCount((i) => i + 1);
+    };
   
   return (
     <div>
@@ -28,25 +32,24 @@ function App({ images = [] }) {
   function Grid({images = [], finishedItems = [], checkItems}) {
     const [selectedItems, setSelectedItems] = React.useState([]);
     
-    const handleCardClick = ((id) => {
-      if (selectedItems.includes(id)) {
-        return;
-      }
-      switch (selectedItems.length) {
-        case 0: 
-          setSelectedItems([id]);
-          break;
-        case 2:
-          setSelectedItems([id]);
-          break;
-        case 1:
-          setSelectedItems((items) => [...items, id]);
-          checkItems(selectedItems[0], id);
-          break;
-        case default:
-          setSelectedItems([]);
-      }
-    });
+    const handleCardClick = (id) => {
+        if (finishedItems.includes(id)) {
+          return;
+        }
+        switch (selectedItems.length) {
+          case 0:
+            setSelectedItems([id]);
+            break;
+          case 1:
+            setSelectedItems((items) => [...items, id]);
+            checkItems(visibleItems[0], id);
+            break;
+          case 2:
+            setSelectedItems([id]);
+          default:
+            setSelectedItems([]);
+        }
+      };
 
     return <ul className="cards">
       {images.map((item) => (
