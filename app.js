@@ -5,14 +5,14 @@ root.render(<App images={images} />)
 
 // Компонент приложения
 function App({ images = [] }) {
-  const finishedItems = React.useState([]);
+  const [finishedItems, setFinishedItems] = React.useState([]);
   const [stepsCount, setStepsCount] = React.useState(0)
   
   const checkItems = (firstItem, secondItem) => {
       firstItem = images.find(({id}) => id === firstItem);
       secondItem = images.find(({id}) => id === secondItem);
       if (firstItem.url === secondItem.url) {
-        finishedItems((items) => [...items, firstItem, secondItem])
+        setFinishedItems((items) => [...items, firstItem, secondItem])
       }
       setStepsCount((i) => i + 1);
     };
@@ -101,10 +101,10 @@ function Card({ url, description, isSelected, isFinished, onCardClick, id }) {
 }
 
 // Компонент модальное окно
-function Modal({stepsCount, finishedItems}) {
+function Modal({setStepsCount, setFinishedItems}) {
       const handleModalClick = () => {
-        finishedItems([]);
-        stepsCount(0);
+        setFinishedItems([]);
+        setStepsCount(0);
       }
 
       return (
