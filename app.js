@@ -16,6 +16,8 @@ function App({ images = [] }) {
       }
       setStepsCount((i) => i + 1);
     };
+
+  const isWin = finishedItems.length === images.length;
   
   return (
     <div>
