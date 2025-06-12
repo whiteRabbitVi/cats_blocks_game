@@ -23,6 +23,7 @@ function App({ images = [] }) {
         <div className="steps">Шаг {stepsCount}</div>
         <Progress value={finishedItems.length} max={images.length}/>
         <Grid images={images} checkItems={checkItems} value={stepsCount} />
+        {isWin && <Modal stepsCount={stepsCount}/>}
       </section>
         <Counter />
     </div>
@@ -94,6 +95,19 @@ function Card({ url, description, isSelected, isFinished, onCardClick, id }) {
             alt={description}
           />
     </li>
+  )
+}
+
+// Компонент модальное окно
+function Modal({stepsCount}) {
+  return (
+    <div className="modal">
+      <div className="modal-box">
+        <h3 className="modal-caption">Победа!</h3>
+        <p className="modal-description">Вы собрали все пары за {stepsCount} шагов</p>
+        <button className="button modal-button" type="button">Новая игра</button>
+      </div>
+    </div>
   )
 }
 
