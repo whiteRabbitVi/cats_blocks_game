@@ -58,7 +58,7 @@ function Progress({value, max}) {
             checkItems(visibleItems[0], id);
             setTimeout(() => {
               setVisibleItems([]);
-            }, TIMEOUT);
+            }, 800);
             break;
           default:
             setSelectedItems([]);
