@@ -21,12 +21,22 @@ function App({ images = [] }) {
     <div>
       <section className="container game">
         <div className="steps">Шаг {stepsCount}</div>
+        <Progress value={finishedItems.length} max={images.length}/>
         <Grid images={images} checkItems={checkItems} value={stepsCount} />
       </section>
         <Counter />
     </div>
   )
 }
+
+// Компонент прогресса
+function Progress({value, max}) {
+      return (
+        <div className="progress-wrapper">
+          <div className="progress" style={{width: `${(max-value)/max * 100}%`}}></div>
+        </div>
+      )
+    }
 
 // Компонент сетки карточек
   function Grid({images = [], finishedItems = [], checkItems}) {
