@@ -6,7 +6,7 @@ root.render(<App images={images} />)
 // Компонент приложения
 function App({ images = [] }) {
   const finishedItems = React.useState([]);
-  const [stepsCount, setStepCount] = React.useState(0)
+  const [stepsCount, setStepsCount] = React.useState(0)
   
   const checkItems = (firstItem, secondItem) => {
       firstItem = images.find(({id}) => id === firstItem);
