@@ -101,17 +101,22 @@ function Card({ url, description, isSelected, isFinished, onCardClick, id }) {
 }
 
 // Компонент модальное окно
-function Modal({stepsCount}) {
-  return (
-    <div className="modal">
-      <div className="modal-box">
-        <h3 className="modal-caption">Победа!</h3>
-        <p className="modal-description">Вы собрали все пары за {stepsCount} шагов</p>
-        <button className="button modal-button" type="button">Новая игра</button>
-      </div>
-    </div>
-  )
-}
+function Modal({stepsCount, finishedItems}) {
+      const handleModalClick = () => {
+        finishedItems([]);
+        stepsCount(0);
+      }
+
+      return (
+        <div className="modal">
+          <div className="modal-box">
+            <h3 className="modal-caption">Победа!</h3>
+            <p className="modal-description">Вы собрали все пары за {stepsCount} шагов</p>
+            <button onClick={handleModalClick} className="button modal-button" type="button">Новая игра</button>
+          </div>
+        </div>
+      )
+    }
 
 // Компонент каунтер
 function Counter() {
