@@ -24,7 +24,12 @@ function App({ images = [] }) {
       <section className="container game">
         <div className="steps">Шаг {stepsCount}</div>
         <Progress value={finishedItems.length} max={images.length}/>
-        <Grid images={images} checkItems={checkItems} value={stepsCount} />
+        <Grid 
+          images={images} 
+          finishedItems={finishedItems}
+          checkItems={checkItems} 
+          value={stepsCount} 
+        />
         {isWin && <Modal stepsCount={stepsCount}/>}
       </section>
         <Counter />
