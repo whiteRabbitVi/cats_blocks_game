@@ -47,7 +47,7 @@ function Progress({value, max}) {
     }
 
 // Компонент сетки карточек
-  function Grid({images = [], finishedItems = [], checkItems}) {
+  function Grid({images, finishedItems, checkItems}) {
     const [selectedItems, setSelectedItems] = React.useState([]);
     
     const handleCardClick = (id) => {
