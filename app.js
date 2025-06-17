@@ -30,7 +30,11 @@ function App({ images = [] }) {
           checkItems={checkItems} 
           value={stepsCount} 
         />
-        {isWin && <Modal stepsCount={stepsCount}/>}
+        {isWin && <Modal 
+          stepsCount={stepsCount}
+          setFinishedItems={setFinishedItems}
+          setStepsCount={setStepsCount}
+      />}
       </section>
         <Counter />
     </div>
@@ -60,7 +64,7 @@ function Progress({value, max}) {
             break;
           case 1:
             setSelectedItems((items) => [...items, id]);
-            checkItems(visibleItems[0], id);
+            checkItems(selectedItems[0], id);
             setTimeout(() => {
               setVisibleItems([]);
             }, 800);
