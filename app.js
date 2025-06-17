@@ -12,7 +12,7 @@ function App({ images = [] }) {
       firstItem = images.find(({id}) => id === firstItem);
       secondItem = images.find(({id}) => id === secondItem);
       if (firstItem.url === secondItem.url) {
-        setFinishedItems((items) => [...items, firstItem, secondItem])
+        setFinishedItems((items) => [...items, firstItem.id, secondItem.id])
       }
       setStepsCount((i) => i + 1);
     };
