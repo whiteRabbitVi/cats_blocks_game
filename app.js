@@ -28,7 +28,6 @@ function App({ images = [] }) {
           images={images} 
           finishedItems={finishedItems}
           checkItems={checkItems} 
-          value={stepsCount} 
         />
         {isWin && <Modal 
           stepsCount={stepsCount}
