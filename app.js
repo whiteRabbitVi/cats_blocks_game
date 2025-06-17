@@ -111,7 +111,7 @@ function Card({ url, description, isSelected, isFinished, onCardClick, id }) {
 }
 
 // Компонент модальное окно
-function Modal({setStepsCount, setFinishedItems}) {
+function Modal({stepsCount, setStepsCount, setFinishedItems}) {
       const handleModalClick = () => {
         setFinishedItems([]);
         setStepsCount(0);
