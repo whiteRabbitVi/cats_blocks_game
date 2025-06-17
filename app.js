@@ -89,7 +89,8 @@ function Progress({value, max}) {
   }
 
 // Компонент карточки
-function Card({ url, description, isSelected, isFinished, onCardClick, id }) {
+function Card({ item, isSelected, isFinished, onCardClick }) {
+  const {url, description, id} = item;
   const className = `${isSelected ? 'card-show' : ''} ${isFinished ? 'card-finished' : ''}`;
   const handleClick = () => {
         if (isFinished) {
