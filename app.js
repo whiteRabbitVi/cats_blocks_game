@@ -22,8 +22,7 @@ function App({ images = [] }) {
   return (
     <div>
       <section className="container game">
-        <div className="steps">Шаг {stepsCount}</div>
-        <Progress value={finishedItems.length} max={images.length}/>
+        <Progress value={finishedItems.length} max={images.length} stepsCount={stepsCount}/>
         <Grid 
           images={images} 
           finishedItems={finishedItems}
@@ -41,12 +40,20 @@ function App({ images = [] }) {
 }
 
 // Компонент прогресса
-function Progress({value, max}) {
+    function Progress({ value, max, stepsCount }) {
       return (
-        <div className="progress-wrapper">
-          <div className="progress" style={{width: `${(max-value)/max * 100}%`}}></div>
-        </div>
-      )
+      <>
+            <div className="progress-wrapper">
+              <div className="progress" style={{ width: `${(value / max) * 100}%` }}></div>
+            </div>
+
+            <p className="progress-description">
+              Открыто <span>{value / 2}</span> / <span>{max / 2}</span>
+            </p>
+
+            <div className="steps">Шаг {stepsCount}</div>
+        </>
+      );
     }
 
 // Компонент сетки карточек
