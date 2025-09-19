@@ -34,7 +34,6 @@ function App({ images = [] }) {
           setStepsCount={setStepsCount}
       />}
       </section>
-        <Counter />
     </div>
   )
 }
