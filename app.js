@@ -171,7 +171,7 @@ function InitialPage({onStart}) {
         {images.map((item) => (
                 <Card
                     key={item.id}
-                    url={item.url}
+                    item={item}
                     description={item.description}
                     isSelected={selectedItems.includes(item.id)}
                     isFinished={finishedItems.includes(item.id)}
@@ -182,7 +182,8 @@ function InitialPage({onStart}) {
   }
 
 // Компонент карточки
-function Card({ url, description, id, isSelected, isFinished, onCardClick }) {
+function Card({ item, isSelected, isFinished, onCardClick }) {
+  const {id, url, description} = item;
   const className = `${isSelected ? 'card-show' : ''} ${isFinished ? 'card-finished' : ''}`;
   const handleClick = () => {
         if (isFinished) {
