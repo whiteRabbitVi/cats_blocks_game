@@ -233,6 +233,21 @@ function Modal({children}) {
     );
   }
 
+// Функция склоненния слов
+function getDeclension({ count, one, few, many }) {
+  const mod10 = count % 10;
+  const mod100 = count % 100;
+
+  if (mod10 === 1 && mod100 !== 11) {
+    return one;
+  }
+  if (mod10 >= 2 && mod10 <= 4 && (mod100 < 10 || mod100 >= 20)) {
+    return few;
+  }
+  return many;
+}
+
+// Функция таблицы
     function ResultsTable({ current, results }) {
       const sortedResults = [...results, {name: 'Ваш результат', stepsCount: current}]
         .sort((a, b) => a.stepsCount - b.stepsCount);
