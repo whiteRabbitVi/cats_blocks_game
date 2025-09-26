@@ -48,6 +48,82 @@ const images = [{
   'description': 'white and purple flower petals',
 }];
 
-// списки выделенных и отгаданных карточек для отладки
-const visibleItems = ['hX_hf2lPpUU', '3tYZjGSBwbk'];
-const finishedItems = ['YdAqiUkUoWA', 'YdAqiUkUoWA1', 'w1JE5duY62M', 'w1JE5duY62M1'];
+const cars = [{
+  'id': 'YdAqiUkUoWA',
+  'url': 'img/cars-1.jpg',
+  'description': '',
+}, {
+  'id': 'hX_hf2lPpUU',
+  'url': 'img/cars-2.jpg',
+  'description': '',
+}, {
+  'id': 'w1JE5duY62M',
+  'url': 'img/cars-3.jpg',
+  'description': '',
+}, {
+  'id': '3tYZjGSBwbk',
+  'url': 'img/cars-4.jpg',
+  'description': '',
+}, {
+  'id': 'NoXUQ54pDac',
+  'url': 'img/cars-5.jpg',
+  'description': '',
+}, {
+  'id': 'OZhYgZh0bAg',
+  'url': 'img/cars-6.jpg',
+  'description': '',
+}];
+
+const flowers = [{
+  'id': 'YdAqiUkUoWA',
+  'url': 'img/flowers-1.jpg',
+  'description': '',
+}, {
+  'id': 'hX_hf2lPpUU',
+  'url': 'img/flowers-2.jpg',
+  'description': '',
+}, {
+  'id': 'w1JE5duY62M',
+  'url': 'img/flowers-3.jpg',
+  'description': '',
+}, {
+  'id': '3tYZjGSBwbk',
+  'url': 'img/flowers-4.jpg',
+  'description': '',
+}, {
+  'id': 'NoXUQ54pDac',
+  'url': 'img/flowers-5.jpg',
+  'description': '',
+}, {
+  'id': 'OZhYgZh0bAg',
+  'url': 'img/flowers-6.jpg',
+  'description': '',
+}];
+
+const imageCollection = {
+  flowers, cats, cars,
+};
+
+const results = [
+  { name: 'Аня', stepsCount: 16 },
+  { name: 'Вася', stepsCount: 12 },
+  { name: 'Петя', stepsCount: 19 }
+];
+
+const getImages = (type) => {
+  // Формирование тематического набора данных
+  const images = imageCollection[type]
+  const set = []
+  images.forEach(image => {
+    set.push({...image})
+    set.push({...image, id: `${image.id}-1`})
+  })
+
+  // Перемешивание данных
+  if (RANDOMIZED) {
+    set.sort(() => 0.5 - Math.random())
+  }
+
+  return set;
+};
+
