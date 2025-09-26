@@ -213,16 +213,5 @@ function Modal({children}) {
           </div>
         </div>
       );
-    }
-
-      return (
-        <div className="modal">
-          <div className="modal-box">
-            <h3 className="modal-caption">Победа!</h3>
-            <p className="modal-description">Вы собрали все пары за {stepsCount} шагов</p>
-            <button onClick={handleModalClick} className="button modal-button" type="button">Новая игра</button>
-          </div>
-        </div>
-      )
-    }
+}
 
