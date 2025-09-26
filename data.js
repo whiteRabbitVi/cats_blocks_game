@@ -1,4 +1,4 @@
-const images = [{
+const cats = [{
   'id': 'YdAqiUkUoWA',
   'url': 'img/cats-1.jpg',
   'description': 'pink petaled flower',
@@ -101,7 +101,7 @@ const flowers = [{
 }];
 
 const imageCollection = {
-  flowers, cats, cars,
+  cats, cars, flowers
 };
 
 const results = [
@@ -126,4 +126,5 @@ const getImages = (type) => {
 
   return set;
 };
+
 
