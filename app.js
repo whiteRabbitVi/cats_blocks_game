@@ -172,11 +172,10 @@ function InitialPage({onStart}) {
         {images.map((item) => (
                 <Card
                     key={item.id}
-                    id={item.id}
                     url={item.url}
                     description={item.description}
-                    isFinished={finishedItems.includes(item.id)}
                     isSelected={selectedItems.includes(item.id)}
+                    isFinished={finishedItems.includes(item.id)}
                     onCardClick={handleCardClick}
                 />
         ))}
